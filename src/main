@@ -1,0 +1,49 @@
+""" List of ciphers to support:
+Atbash Cipher
+ROT13 Cipher
+Caesar Cipher
+Affine Cipher
+Rail-fence Cipher
+Baconian Cipher
+Polybius Square Cipher
+Simple Substitution Cipher
+Codes and Nomenclators Cipher
+Columnar Transposition Cipher
+Autokey Cipher
+Beaufort Cipher
+Porta Cipher
+Running Key Cipher
+Vigenère and Gronsfeld Cipher
+Homophonic Substitution Cipher
+Four-Square Cipher
+Hill Cipher
+Playfair Cipher
+ADFGVX Cipher
+ADFGX Cipher
+Bifid Cipher
+Straddle Checkerboard Cipher
+Trifid Cipher
+Base64 Cipher
+Fractionated Morse Cipher
+
+Mecanical: Enigma Cipher, Lorenz Cipher
+"""
+def at_bash(plaintext):
+    encoding = {"A": "Z", "B": "Y", "C": "X", "D": "W",
+                "E": "V", "F": "U", "G": "T", "H": "S",
+                "I": "R", "J": "Q", "K": "P", "L": "O",
+                "M": "N", "N": "M", "O": "L", "P": "K",
+                "Q": "J", "R": "I", "S": "H", "T": "G",
+                "U": "F", "V": "E", "W": "D", "X": "C",
+                "Y": "B", "Z": "A", "a": "z", "b": "y",
+                "c": "x", "d": "w", "e": "v", "f": "u",
+                "g": "t", "h": "s", "i": "r", "j": "q",
+                "k": "p", "l": "o", "m": "n", "n": "m",
+                "o": "l", "p": "k", "q": "j", "r": "i",
+                "s": "h", "t": "g", "u": "f", "v": "e",
+                "w": "d", "x": "c", "y": "b", "z": "a"}
+    return "".join([encoding.get(c) if (ord(c) > 64 and ord(c) < 91) or (ord(c) > 96 and ord(c) < 122)
+                    else c for c in plaintext ])
+
+plaintext = "I am heading over now!"
+print(atBash(plaintext))
